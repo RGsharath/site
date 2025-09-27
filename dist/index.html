@@ -6,15 +6,44 @@
     <title>Sharath's Portfolio</title>
     <meta name="description" content="Sharath's Portfolio" />
     <meta name="author" content="Sharath" />
+      
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/site/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/site/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/site/favicon.ico" />
+    <link rel="apple-touch-icon" href="/site/favicon.ico" />
 
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Sharath's Portfolio" />
     <meta property="og:description" content="Sharath's Portfolio" />
     <meta property="og:type" content="website" />
-    <script type="module" crossorigin src="/site/assets/index-Bk2bIITw.js"></script>
+    <meta property="og:url" content="https://rgsharath.github.io/site/" />
+    <meta property="og:image" content="https://rgsharath.github.io/site/favicon.ico" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sharath's Portfolio" />
+    <meta name="twitter:description" content="Sharath's Portfolio" />
+    <meta name="twitter:image" content="https://rgsharath.github.io/site/favicon.ico" />
+    <script type="module" crossorigin src="/site/assets/index-Qe6Pv52y.js"></script>
     <link rel="stylesheet" crossorigin href="/site/assets/index-BzFsSpVb.css">
   </head>
 
   <body>
     <div id="root"></div>
+    <script>
+      // GitHub Pages SPA routing fix
+      // This script handles the redirect from 404.html
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </body>
 </html>
