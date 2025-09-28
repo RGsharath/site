@@ -91,7 +91,7 @@
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 sm:gap-6 justify-center animate-slide-up animate-delay-800 px-4">
+            <div className="flex gap-4 sm:gap-6 justify-center items-center animate-slide-up animate-delay-800 w-full px-4">
               {[
                 { icon: Linkedin, href: "https://linkedin.com/in/sharath-kumar-rg", label: "LinkedIn" },
                 { icon: Instagram, href: "https://instagram.com/itssharathheree", label: "Instagram" },
@@ -100,7 +100,7 @@
                 <a
                   key={label}
                   href={href}
-                  className="group p-2 sm:p-3 glass rounded-full hover:shadow-glow transition-all duration-300 hover:scale-110"
+                  className="group p-2 sm:p-3 glass rounded-full hover:shadow-glow transition-all duration-300 hover:scale-110 flex items-center justify-center"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:text-primary transition-colors duration-300" />
