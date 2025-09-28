@@ -25,7 +25,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-primary rounded-full blur-3xl opacity-20 float"></div>
@@ -33,23 +33,22 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-neon-cyan rounded-full blur-2xl opacity-30 float animate-delay-600"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center space-y-8 animate-slide-up">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center space-y-6 sm:space-y-8 animate-slide-up">
           {/* Main heading */}
-            <div className="space-y-4">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-primary via-pink-500 to-cyan-400 bg-clip-text text-transparent">
+            <div className="space-y-3 sm:space-y-4">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-tight">
+              <span className="bg-gradient-to-r from-primary via-pink-500 to-cyan-400 bg-clip-text text-transparent block sm:inline">
               Sharath
               </span>
-              {/* <br /> */}
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-primary bg-clip-text text-transparent ml-3">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-primary bg-clip-text text-transparent block sm:inline sm:ml-3">
               Kumar RG
               </span>
             </h1>
 
             {/* Typing animation */}
-            <div className="h-12 flex items-center justify-center">
-              <p className="text-xl md:text-2xl text-muted-foreground font-mono">
+            <div className="h-10 sm:h-12 flex items-center justify-center">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-mono text-center px-4">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </p>
@@ -59,39 +58,40 @@ const HeroSection = () => {
           {/* Location */}
           <div className="flex items-center justify-center gap-2 text-muted-foreground animate-slide-up animate-delay-200">
             <MapPin className="w-4 h-4" />
-            <span>Chennai, India</span>
+            <span className="text-sm sm:text-base">Chennai, India</span>
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-400">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-400 px-4">
             2+ years of experience building scalable ML and DL solutions using TensorFlow, PyTorch, 
             and cloud-native tools. Specialized in facial recognition, time series forecasting, 
             and LLM-based automation.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-delay-600">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up animate-delay-600 px-4">
             <Button 
               onClick={handleDownloadCV}
-              className="group bg-gradient-primary hover:shadow-neon transition-all duration-500 px-8 py-3 text-lg"
+              className="group bg-gradient-primary hover:shadow-neon transition-all duration-500 px-6 sm:px-8 py-3 text-base sm:text-lg w-full sm:w-auto"
             >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
               <a href="https://drive.google.com/uc?export=download&id=1hitnDhQU43zawtXNgPR5rlyEYGZWAmTT" target="_blank" rel="noopener noreferrer">
                 Download CV
               </a>
             </Button>
             <Button 
               variant="outline" 
-              className="glass hover:bg-primary/10 border-primary/30 px-8 py-3 text-lg transition-all duration-300"
+              className="glass hover:bg-primary/10 border-primary/30 px-6 sm:px-8 py-3 text-base sm:text-lg transition-all duration-300 w-full sm:w-auto"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              <a href="mailto:sharathkmr2001@gmail.com" target="_blank" rel="noopener noreferrer">Link</a>
-              <span>Get In Touch</span>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <a href="mailto:sharathkmr2001@gmail.com" target="_blank" rel="noopener noreferrer">
+                Get In Touch
+              </a>
             </Button>
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-6 justify-center animate-slide-up animate-delay-800">
+          <div className="flex gap-4 sm:gap-6 justify-center animate-slide-up animate-delay-800 px-4">
             {[
               { icon: Linkedin, href: "https://linkedin.com/in/sharath-kumar-rg", label: "LinkedIn" },
               { icon: Instagram, href: "https://instagram.com/itssharathheree", label: "Instagram" },
@@ -100,10 +100,10 @@ const HeroSection = () => {
               <a
                 key={label}
                 href={href}
-                className="group p-3 glass rounded-full hover:shadow-glow transition-all duration-300 hover:scale-110"
+                className="group p-2 sm:p-3 glass rounded-full hover:shadow-glow transition-all duration-300 hover:scale-110"
                 aria-label={label}
               >
-                <Icon className="w-6 h-6 group-hover:text-primary transition-colors duration-300" />
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:text-primary transition-colors duration-300" />
               </a>
             ))}
           </div>

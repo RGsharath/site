@@ -29,10 +29,10 @@ const Navigation = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled ? 'glass shadow-glow' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <div className="text-xl md:text-2xl font-bold gradient-text">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">
               Sharath
             </div>
           </Link>
@@ -65,15 +65,15 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 p-4 glass rounded-lg">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden mt-4 p-4 glass rounded-lg mx-4 sm:mx-0">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {navItems.map(({ label, href }) => (
-                <a key={label} href={href} className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                <a key={label} href={href} className="text-muted-foreground hover:text-primary transition-colors duration-300 py-2 text-center"
                    onClick={() => setIsOpen(false)}>
                   {label}
                 </a>
               ))}
-              <Button asChild className="bg-gradient-primary hover:shadow-neon transition-all duration-300 w-full">
+              <Button asChild className="bg-gradient-primary hover:shadow-neon transition-all duration-300 w-full mt-2">
                 <a href="https://drive.google.com/uc?export=download&id=1hitnDhQU43zawtXNgPR5rlyEYGZWAmTT" target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4 mr-2" />
                   Resume

@@ -129,6 +129,25 @@
     background-attachment: fixed;
   }
 
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    body {
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+    
+    /* Prevent horizontal scroll on mobile */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    /* Improve touch targets */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
   /* Scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
@@ -275,5 +294,36 @@
 
   .animate-delay-600 {
     animation-delay: 600ms;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6;
+  }
+
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  .mobile-card {
+    @apply p-4 sm:p-6;
+  }
+
+  /* Prevent text overflow on mobile */
+  .text-ellipsis-mobile {
+    @apply truncate sm:whitespace-normal;
+  }
+
+  /* Mobile-friendly spacing */
+  .mobile-spacing {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  .mobile-gap {
+    @apply gap-3 sm:gap-4;
   }
 }

@@ -103,20 +103,20 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 px-6">
+    <section ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="gradient-text">Featured</span> Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Innovative AI/ML solutions and applications that showcase technical expertise and real-world impact
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-12 ${inView ? 'animate-slide-up' : 'opacity-0'}`}>
+        <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4 ${inView ? 'animate-slide-up' : 'opacity-0'}`}>
           {categories.map((category) => (
             <Button
               key={category}
@@ -126,7 +126,7 @@ const ProjectsSection = () => {
                 ${selectedCategory === category 
                   ? 'bg-gradient-primary shadow-glow' 
                   : 'glass border-primary/30 hover:border-primary hover:shadow-glow'
-                } transition-all duration-300
+                } transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2
               `}
             >
               {category}
@@ -135,7 +135,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project, index) => (
             <Card 
               key={project.title}
@@ -145,42 +145,42 @@ const ProjectsSection = () => {
               `}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-3 sm:pb-4 p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-2">
-                  <Badge className={`${getStatusColor(project.status)} border`}>
+                  <Badge className={`${getStatusColor(project.status)} border text-xs`}>
                     {project.status}
                   </Badge>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
+                  <div className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                     {project.date}
                   </div>
                 </div>
                 
-                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors duration-300 leading-tight">
                   {project.title}
                 </CardTitle>
                 
-                <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardDescription className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                 {/* Key Highlights */}
                 <div>
-                  <h4 className="text-sm font-semibold text-primary mb-2">Key Features:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h4 className="text-xs sm:text-sm font-semibold text-primary mb-2">Key Features:</h4>
+                  <ul className="text-xs sm:text-sm text-muted-foreground space-y-1">
                     {project.highlights.map((highlight, idx) => (
                       <li key={idx} className="flex items-center gap-2">
-                        <div className="w-1 h-1 bg-primary rounded-full"></div>
-                        {highlight}
+                        <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="leading-relaxed">{highlight}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.technologies.slice(0, 4).map((tech) => (
                     <Badge 
                       key={tech}

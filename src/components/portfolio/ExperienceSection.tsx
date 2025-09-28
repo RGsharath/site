@@ -98,64 +98,64 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6">
+    <section ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="gradient-text">Professional</span> Journey
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Building impactful AI/ML solutions and leading innovative projects in the tech industry
           </p>
         </div>
 
         {/* Experience Timeline */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {/* Current Position */}
           <Card className={`glass hover:shadow-glow transition-all duration-500 ${inView ? 'animate-slide-up' : 'opacity-0'}`}>
-            <CardHeader>
-              <div className="flex items-start justify-between mb-4">
+            <CardHeader className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-gradient-primary rounded-lg">
-                    <Building className="w-6 h-6 text-primary-foreground" />
+                    <Building className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl">{experienceData.current.position}</CardTitle>
-                    <p className="text-xl text-primary font-semibold">{experienceData.current.company}</p>
+                    <CardTitle className="text-lg sm:text-2xl">{experienceData.current.position}</CardTitle>
+                    <p className="text-base sm:text-xl text-primary font-semibold">{experienceData.current.company}</p>
                   </div>
                 </div>
-                <Badge className="bg-neon-cyan/20 text-neon-cyan border-neon-cyan">
+                <Badge className="bg-neon-cyan/20 text-neon-cyan border-neon-cyan self-start sm:self-auto">
                   Current
                 </Badge>
               </div>
               
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground mb-4">
                 <div className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                   {experienceData.current.duration}
                 </div>
                 <div className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                   {experienceData.current.location}
                 </div>
-                <Badge variant="outline" className="glass border-primary/30">
+                <Badge variant="outline" className="glass border-primary/30 text-xs">
                   {experienceData.current.type}
                 </Badge>
               </div>
               
-              <p className="text-muted-foreground mb-6">{experienceData.current.description}</p>
+              <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">{experienceData.current.description}</p>
             </CardHeader>
 
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6 pt-0">
               {/* Key Achievements */}
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4">Key Achievements:</h4>
-                <div className="grid gap-3">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">Key Achievements:</h4>
+                <div className="grid gap-2 sm:gap-3">
                   {experienceData.current.achievements.map((achievement, index) => (
                     <div key={index} className="flex items-start gap-3 group">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{achievement}</p>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-2 group-hover:scale-150 transition-transform duration-300 flex-shrink-0"></div>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{achievement}</p>
                     </div>
                   ))}
                 </div>
@@ -163,13 +163,13 @@ const ExperienceSection = () => {
 
               {/* Technologies */}
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4">Technologies Used:</h4>
-                <div className="flex flex-wrap gap-2">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">Technologies Used:</h4>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {experienceData.current.technologies.map((tech) => (
                     <Badge 
                       key={tech}
                       variant="outline" 
-                      className="glass border-primary/30 hover:border-primary hover:shadow-glow transition-all duration-300"
+                      className="glass border-primary/30 hover:border-primary hover:shadow-glow transition-all duration-300 text-xs"
                     >
                       {tech}
                     </Badge>
@@ -181,47 +181,47 @@ const ExperienceSection = () => {
 
           {/* Education */}
           <Card className={`glass hover:shadow-glow transition-all duration-500 ${inView ? 'animate-slide-up animate-delay-200' : 'opacity-0'}`}>
-            <CardHeader>
-              <div className="flex items-start justify-between mb-4">
+            <CardHeader className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-gradient-secondary rounded-lg">
-                    <BookOpen className="w-6 h-6 text-primary-foreground" />
+                    <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl">{experienceData.education.degree}</CardTitle>
-                    <p className="text-xl text-primary font-semibold">{experienceData.education.institution}</p>
+                    <CardTitle className="text-lg sm:text-2xl leading-tight">{experienceData.education.degree}</CardTitle>
+                    <p className="text-base sm:text-xl text-primary font-semibold">{experienceData.education.institution}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <Badge className="bg-gradient-primary text-primary-foreground mb-2">
+                <div className="text-left sm:text-right">
+                  <Badge className="bg-gradient-primary text-primary-foreground mb-2 text-xs sm:text-sm">
                     CGPA: {experienceData.education.cgpa}
                   </Badge>
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground mb-4">
                 <div className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                   {experienceData.education.duration}
                 </div>
                 <div className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                   {experienceData.education.location}
                 </div>
               </div>
               
-              <p className="text-muted-foreground mb-6">{experienceData.education.description}</p>
+              <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">{experienceData.education.description}</p>
             </CardHeader>
 
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6 pt-0">
               {/* Achievements */}
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4">Academic Achievements:</h4>
-                <div className="grid gap-3">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">Academic Achievements:</h4>
+                <div className="grid gap-2 sm:gap-3">
                   {experienceData.education.achievements.map((achievement, index) => (
                     <div key={index} className="flex items-start gap-3 group">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{achievement}</p>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-2 group-hover:scale-150 transition-transform duration-300 flex-shrink-0"></div>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{achievement}</p>
                     </div>
                   ))}
                 </div>
@@ -229,13 +229,13 @@ const ExperienceSection = () => {
 
               {/* Technologies */}
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4">Academic Focus:</h4>
-                <div className="flex flex-wrap gap-2">
+                <h4 className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">Academic Focus:</h4>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {experienceData.education.technologies.map((tech) => (
                     <Badge 
                       key={tech}
                       variant="outline" 
-                      className="glass border-primary/30 hover:border-primary hover:shadow-glow transition-all duration-300"
+                      className="glass border-primary/30 hover:border-primary hover:shadow-glow transition-all duration-300 text-xs"
                     >
                       {tech}
                     </Badge>
@@ -247,29 +247,29 @@ const ExperienceSection = () => {
         </div>
 
         {/* Leadership & Achievements */}
-        <div className={`mt-16 ${inView ? 'animate-slide-up animate-delay-400' : 'opacity-0'}`}>
-          <h3 className="text-3xl font-bold text-center mb-12">
+        <div className={`mt-12 sm:mt-16 ${inView ? 'animate-slide-up animate-delay-400' : 'opacity-0'}`}>
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
             <span className="gradient-text">Leadership</span> & Achievements
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {achievements.map(({ title, description, year, icon: Icon }, index) => (
               <Card key={title} className="glass hover:shadow-glow transition-all duration-500 group">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gradient-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6 text-primary-foreground" />
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="p-2 sm:p-3 bg-gradient-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-2">
+                        <h4 className="text-base sm:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                           {title}
                         </h4>
-                        <Badge variant="outline" className="glass border-primary/30 text-xs">
+                        <Badge variant="outline" className="glass border-primary/30 text-xs self-start">
                           {year}
                         </Badge>
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -279,20 +279,20 @@ const ExperienceSection = () => {
         </div>
 
         {/* Publications */}
-        <div className={`mt-16 ${inView ? 'animate-slide-up animate-delay-600' : 'opacity-0'}`}>
-          <h3 className="text-3xl font-bold text-center mb-12">
+        <div className={`mt-12 sm:mt-16 ${inView ? 'animate-slide-up animate-delay-600' : 'opacity-0'}`}>
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
             <span className="gradient-text">Research</span> Publications
           </h3>
           
-          <div className="grid gap-4">
+          <div className="grid gap-3 sm:gap-4">
             {publications.map((publication, index) => (
               <Card key={index} className="glass hover:shadow-glow transition-all duration-500 group">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold group-hover:scale-110 transition-transform duration-300">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold group-hover:scale-110 transition-transform duration-300 flex-shrink-0 text-xs sm:text-sm">
                       {index + 1}
                     </div>
-                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-sm sm:text-base leading-relaxed">
                       {publication}
                     </p>
                   </div>
